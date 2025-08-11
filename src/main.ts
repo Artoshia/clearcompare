@@ -13,6 +13,10 @@ Version: 0.0.01
 
 */
 
+import { config } from "dotenv";
+
+config(); //loads from .env file for development use.
+
 import OpenAI from "openai";
 import { Command } from "@commander-js/extra-typings";
 const program = new Command();
