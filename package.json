@@ -1,0 +1,27 @@
+{
+  "name": "ai-code-summary",
+  "version": "0.0.01",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "pnpm install && tsc --build && npm link"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "typescript": "^5.8.3"
+  },
+  "bin": {
+    "clearcompare": "./dist/main.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "@commander-js/extra-typings": "^14.0.0",
+    "clipboardy": "^4.0.0",
+    "commander": "^14.0.0",
+    "openai": "^5.12.1"
+  }
+}

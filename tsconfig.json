@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "target": "es2024",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2024",
+        ],
+        "types": [
+            "node"
+        ],
+        /* Linting */
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+    },
+}
