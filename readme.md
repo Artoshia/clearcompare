@@ -6,8 +6,8 @@ A tool for generating PR descriptions according to a template.
 
 requirements:
 
-1. Installed [nodejs](https://nodejs.org/en/download)
-1. Installed [pnpm](https://pnpm.io/)
+1. Installed [node.js](https://nodejs.org/en/download).
+1. Installed [pnpm](https://pnpm.io/).
 
 instructions:
 
