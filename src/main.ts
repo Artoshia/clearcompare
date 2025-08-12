@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
+// Register esbuild for .md file loading
+require("esbuild-register/dist/node").register({
+  loaders: {
+    ".md": "text", // Treat .md files as plain text
+  },
+});
+
 /*
 
 ## ClearCompare - AI PR Summary Tool.
@@ -15,13 +22,17 @@ Version: 0.0.01
 
 import { config } from "dotenv";
 
-config(); //loads from .env file for development use.
+config({
+  debug: false, //for dev mode.
+  path: __dirname + "/../.env",
+  quiet: true,
+});
 
 import OpenAI from "openai";
 import { Command } from "@commander-js/extra-typings";
 const program = new Command();
 
-import summary from "./commands/summary.js";
+import { summary } from "./commands/summary";
 
 const aiClient = new OpenAI({
   apiKey: process.env.GPT_API_KEY,

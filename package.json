@@ -5,23 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "setup": "pnpm install && tsc --build && npm link"
+    "setup": "pnpm install && esbuild src/main.ts --bundle --external:esbuild-register --external:fs --external:path --target=esnext --outfile=dist/main.js --loader:.md=text --platform=node && pnpm link ./"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^24.0.10",
+    "@types/copy-paste": "^2.1.0",
+    "@types/node": "^24.2.1",
+    "cpx": "^1.5.0",
+    "esbuild": "^0.25.8",
+    "esbuild-register": "^3.6.0",
     "typescript": "^5.8.3"
   },
   "bin": {
     "clearcompare": "./dist/main.js"
   },
-  "type": "module",
   "dependencies": {
     "@commander-js/extra-typings": "^14.0.0",
-    "clipboardy": "^4.0.0",
     "commander": "^14.0.0",
+    "copy-paste": "^2.2.0",
     "dotenv": "^17.2.1",
     "openai": "^5.12.1"
   }
