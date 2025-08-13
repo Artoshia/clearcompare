@@ -15,6 +15,12 @@ instructions:
 2. add .env file with `GPT_API_KEY="KEY_HERE"` and add your [OpenAI](https://platform.openai.com/api-keys) key
 3. open a terminal & run `clearcompare --help` to see available commands.
 
+## How to change template
+
+1. go to ./src/customisation/template.md
+2. add your content (including markdown).
+
+
 ---
 
 Author: Liam Anderson
