@@ -17,7 +17,7 @@ instructions:
 
 ## How to change template
 
-1. go to ./src/customisation/template.md
+1. go to `./src/customisation/template.md`
 2. add your content (including markdown).
 
 
