@@ -1,20 +1,4 @@
-## Pull Request Checklist
-
-Please ensure the following before submitting your PR:
-
-- [ ] Code compiles without errors
-- [ ] All tests pass locally
-- [ ] Functionality tested and ran locally
-- [ ] Documentation updated (if applicable)
-- [ ] Self-review completed
-- [ ] Breaking changes documented
-
-## Testing
-
-- [ ] Unit tests added/updated
-- [ ] Integration tests pass
-- [ ] Manual testing completed
-- [ ] Information provided is enough for QA to manually test
+# Frontend Pull Request
 
 ## 📝 Description
 
@@ -54,3 +38,5 @@ _Please provide any specific setup or config that may be required for QA._
 _Optional: Any caveats, assumptions, or relevant info for the reviewer. Why any of the above may not be checked._
 
 ## 📸 Images / Recordings
+
+_Include screenshots or recordings showing the changes in action. Demonstrate both successful flows and error cases when possible._
