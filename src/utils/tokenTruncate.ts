@@ -7,23 +7,22 @@ import { encoding_for_model, TiktokenModel } from "tiktoken";
  * @param {string} model - Model name (e.g., "gpt-3.5-turbo", "gpt-4").
  * @returns {string} - Truncated string.
  */
-export const truncateByTokens = (
+export const tokenTruncate = (
   text: string,
   maxTokens: number = 30000,
   model: TiktokenModel = "gpt-4-turbo"
 ) => {
   const encoder = encoding_for_model(model);
+  let tokens = encoder.encode(text);
+  let truncatedTokens = tokens.slice(0, maxTokens);
+  let truncatedText = encoder.decode(truncatedTokens);
 
-  // Encode text into tokens
-  const tokens = encoder.encode(text);
+  // Ensure the decoded string fits within the token limit
+  while (encoder.encode(truncatedText.toString()).length > maxTokens) {
+    truncatedTokens = truncatedTokens.slice(0, -1);
+    truncatedText = encoder.decode(truncatedTokens);
+  }
 
-  // Slice tokens to limit
-  const truncatedTokens = tokens.slice(0, maxTokens);
-  console.log(tokens.length, "??!!");
-
-  // Decode tokens back to string
-  const truncatedText = encoder.decode(truncatedTokens);
-
-  encoder.free(); // release memory
+  encoder.free();
   return truncatedText.toString();
 };

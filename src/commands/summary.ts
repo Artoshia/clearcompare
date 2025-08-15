@@ -5,7 +5,7 @@ import { returnPrompt } from "../agent-info/summaryPrompt";
 import OpenAI from "openai";
 
 import { copy } from "copy-paste";
-import { truncateByTokens } from "../utils/tokenCut";
+import { tokenTruncate } from "../utils/tokenTruncate";
 
 export const summary = ({
   program,
@@ -52,11 +52,12 @@ export const summary = ({
           console.log("No changes detected.");
           return;
         }
+
         const gptResponse = await aiClient.responses.create({
-          model: "gpt-4-turbo",
+          model: "gpt-4turbo",
           instructions: returnPrompt,
-          input: truncateByTokens(diffOutput, 20_000),
-          temperature: 0.2, //so that output is more consistent.
+          input: tokenTruncate(diffOutput),
+          temperature: 0.2, //more predictable.
         });
         if (options.view) {
           console.log("\n", gptResponse.output_text);
