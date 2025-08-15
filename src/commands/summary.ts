@@ -62,7 +62,6 @@ export const summary = ({
           console.log("\n", gptResponse.output_text);
         }
         copy(gptResponse.output_text);
-        // clipboard.writeSync(gptResponse.output_text);
         console.log("\n", "📋 Copied to clipboard ✅");
       } catch (err: unknown) {
         if (err instanceof Error) {
