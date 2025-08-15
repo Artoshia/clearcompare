@@ -9,7 +9,7 @@ require("esbuild-register/dist/node").register({
 
 /*
 
-## ClearCompare - AI PR Summary Tool.
+## ClearPR - AI PR Summary Tool.
 
 Will compare a branch with main to be able to generate a summary of changes made 
 
