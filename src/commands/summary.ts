@@ -48,7 +48,9 @@ export const summary = ({
           encoding: "utf8",
         });
         if (!diffOutput) {
-          console.log("No changes detected.");
+          console.log(
+            "No changes detected. Are you sure you have committed changes to this branch?"
+          );
           return;
         }
         console.log("Generating summary...");
