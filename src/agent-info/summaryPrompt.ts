@@ -1,4 +1,4 @@
-import template from "../customisation/template.md";
+import template from "../customisation/templates/DEFAULT.md";
 
 export const returnPrompt = `
 You are a helpful assistant that creates a PR summary based on the following git diff output. 

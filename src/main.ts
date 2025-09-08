@@ -41,7 +41,7 @@ const aiClient = new OpenAI({
 program
   .name("clearcompare")
   .description("A simple CLI tool built with Node.js that builds a PR summary.")
-  .version("1.0.0");
+  .version("0.0.1");
 
 summary({ program, aiClient }); //load summary command.
 
