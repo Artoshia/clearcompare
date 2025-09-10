@@ -2,6 +2,9 @@
 
 A tool for generating PR descriptions according to a template.
 
+### Why Typescript Node.js?
+This tool was created for a team which predominantly either develops in C# or React/Typescript. Therefore to allow anyone to be able to edit the source code as well as easily run it on any type of machine or adjust the tool to their requirements it was best to be written in a language that all could easily start in, and had proper library support, Node.js Typescript made sense.
+
 ## How to install
 
 requirements:
