@@ -28,24 +28,37 @@ config({
   quiet: true,
 });
 
-import OpenAI from "openai";
 import { Command } from "@commander-js/extra-typings";
 const program = new Command();
 
 import { summary } from "./commands/summary";
-
-const aiClient = new OpenAI({
-  apiKey: process.env.GPT_API_KEY,
-  baseURL: process.env.GPT_BASE_URL || "https://api.openai.com/v1",
-
-  defaultHeaders: { "api-key": process.env.GPT_API_KEY },
-});
+import { createAzureClient, createOpenAIClient } from "./clients";
 
 program
   .name("clearcompare")
   .description("A simple CLI tool built with Node.js that builds a PR summary.")
   .version("0.0.1");
 
-summary({ program, aiClient }); //load summary command.
+//load azure client...
+summary({
+  program,
+  aiClient: createAzureClient({
+    apiKey: process.env.GPT_API_KEY || "",
+    endpoint: process.env.GPT_BASE_URL,
+    deployment: process.env.DEPLOYMENT_NAME || "",
+  }),
+}); //load summary command.
 
+/*
+
+this is the openai client, uncomment this to use the openAI client.
+
+summary({
+  program,
+  aiClient: createOpenAIClient({
+    apiKey: process.env.GPT_API_KEY_OPENAI || "",
+  }),
+}); //load summary command.
+
+*/
 program.parse(process.argv);
