@@ -36,12 +36,15 @@ import { summary } from "./commands/summary";
 
 const aiClient = new OpenAI({
   apiKey: process.env.GPT_API_KEY,
+  baseURL: process.env.GPT_BASE_URL || "https://api.openai.com/v1",
+
+  defaultHeaders: { "api-key": process.env.GPT_API_KEY },
 });
 
 program
   .name("clearcompare")
   .description("A simple CLI tool built with Node.js that builds a PR summary.")
-  .version("1.0.0");
+  .version("0.0.1");
 
 summary({ program, aiClient }); //load summary command.
 

@@ -55,7 +55,7 @@ export const summary = ({
         }
         console.log("Generating summary...");
         const gptResponse = await aiClient.responses.create({
-          model: "gpt-4-turbo",
+          model: process.env.AGENT_NAME || "gpt-4-turbo",
           instructions: returnPrompt,
           input: diffOutput,
           temperature: 0.2, //more predictable.
