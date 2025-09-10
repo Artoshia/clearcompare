@@ -14,7 +14,7 @@ instructions:
 1. run `pnpm run setup`, this installs the packages needed & allows you to run the command anywhere.
 2. add .env file with `GPT_API_KEY="KEY_HERE"` and add your [OpenAI](https://platform.openai.com/api-keys) key
 
-- Alternatively, use your own by adding:
+- Alternatively, use your own deployed models by adding:
 
 ```
 GPT_API_KEY="KEY_HERE"
