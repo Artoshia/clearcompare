@@ -28,6 +28,7 @@ DEPLOYMENT_NAME="DEPLOYMENT_NAME"
 
 1. go to `./src/customisation/template.md`
 2. add your content (including markdown).
+3. re-run `pnpm run setup`
 
 ---
 
