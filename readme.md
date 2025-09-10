@@ -17,8 +17,9 @@ instructions:
 - Alternatively, use your own by adding:
 
 ```
+GPT_API_KEY="KEY_HERE"
 GPT_BASE_URL="BASE_URL_HERE"
-AGENT_NAME="AGENT_NAME_HERE"
+DEPLOYMENT_NAME="DEPLOYMENT_NAME"
 ```
 
 3. open a terminal & run `clearcompare --help` to see available commands.
