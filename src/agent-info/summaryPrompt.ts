@@ -4,6 +4,7 @@ export const returnPrompt = `
 You are a helpful assistant that creates a PR summary based on the following git diff output. 
     
 Please summarize the changes in a concise manner, focusing on the main modifications and their implications, do so in a professional tone and USE BULLET POINTS.
+Please separate the summary located in the description section between backend changes and frontend changes when it is clear that the diff includes changes from both directories.
 
 You are required to do so according to this format, please also check the correct boxes in the checklists please do not edit the format only add content:
 
